@@ -4,14 +4,19 @@ public class Demo {
 
     public static void main(String[] args) {
 
-        StringBuffer sb = new StringBuffer("A");
-        change(sb);
-        System.out.println(sb);
+//        StringBuffer sb = new StringBuffer("A");
+        String s = "123";
+        String s1 = change(s);
+        System.out.println(s.hashCode());
+        System.out.println(s1.hashCode());
     
     }
     
-    public static void change(StringBuffer sb){
-        sb.append("B");
+    public static String change(String s){
+//        System.out.println(s.hashCode());
+//        s = "abc";
+        return s;
+        
     }
 }
 
