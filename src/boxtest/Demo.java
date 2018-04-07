@@ -3,17 +3,15 @@ package boxtest;
 public class Demo {
 
     public static void main(String[] args) {
-//        A a = new A();
-//        System.out.println(a.age);// 0 
-//        change(a);
-//        System.out.println(a.age);// 10 Wrapper类A将age进行封装
-        System.out.println("jvm 实现版本：\t" + System.getProperty("java.vm.version"));
-        System.out.println("jvm 规范版本：\t" + System.getProperty("java.vm.specification.version"));
+
+        StringBuffer sb = new StringBuffer("A");
+        change(sb);
+        System.out.println(sb);
+    
     }
     
-    public static void change(A a){
-        String s = "qqq";
-        a.age = 10;
+    public static void change(StringBuffer sb){
+        sb.append("B");
     }
 }
 
