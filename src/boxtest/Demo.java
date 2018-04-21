@@ -3,13 +3,12 @@ package boxtest;
 public class Demo {
 
     public static void main(String[] args) {
-
-//        StringBuffer sb = new StringBuffer("A");
-        String s = "123";
-        String s1 = change(s);
-        System.out.println(s.hashCode());
-        System.out.println(s1.hashCode());
-    
+        String s1 = "Programming";
+        String s2 = new String("Programming");
+        String s3 = "Program" + "ming";
+        System.out.println(s1 == s2);
+        System.out.println(s1 == s3);
+        System.out.println(s1 == s1.intern());
     }
     
     public static String change(String s){
