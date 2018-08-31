@@ -18,7 +18,3 @@ public class Demo {
         
     }
 }
-
-class A {
-    public int age;
-}

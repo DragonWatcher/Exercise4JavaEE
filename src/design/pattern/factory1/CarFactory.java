@@ -7,7 +7,7 @@ public class CarFactory {
      * 作者： mht<br>
      * 时间：2018年3月20日-下午11:52:54<br>
      */
-    public static Car getCar(Class c) {
+    public static Car getCar(Class<?> c) {
         if (c == null)
             return null;
         try {
