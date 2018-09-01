@@ -3,6 +3,7 @@ package 马士兵高并发编程公开课.wait_notify_CountDownLatch;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Lock;
 
 /**
  * 曾经的面试题（淘宝？） 实现一个容器，提供两个方法：add , size 写两个线程，线程1 为容器添加10个元素，线程2实时监控容器中元素的个数，
@@ -35,7 +36,7 @@ public class MyContainer2 {
     
     public static void main(String[] args) {
         MyContainer2 c = new MyContainer2();
-        
+        // 锁对象，可以是任意的一个对象，使用wait和notify必须在同一个对象锁上
         final Object lock = new Object();
         
         new Thread(() -> {
@@ -45,6 +46,7 @@ public class MyContainer2 {
                 if (c.size() != 5) {
                     try {
                         System.out.println("t2 wait...");
+                        // wait会让当前线程进入阻塞状态，并释放锁
                         lock.wait();
                     } catch (Exception e) {
                         e.printStackTrace();
