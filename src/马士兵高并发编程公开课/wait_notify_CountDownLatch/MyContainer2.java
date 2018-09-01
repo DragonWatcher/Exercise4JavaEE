@@ -3,14 +3,13 @@ package 马士兵高并发编程公开课.wait_notify_CountDownLatch;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Lock;
 
 /**
  * 曾经的面试题（淘宝？） 实现一个容器，提供两个方法：add , size 写两个线程，线程1 为容器添加10个元素，线程2实时监控容器中元素的个数，
  * 当个数为5时，线程2给出提示并结束 <br>
  * 
  * 给lists添加volatile之后，t2能够接到通知，但是，t2线程的死循环很浪费cpu，如果不用死循环，该怎么做？
- * 
+ * =======================================================================
  * 这里使用wait和notify 做到，wait会释放锁，而notify不会释放锁。
  * 需要注意的是，运用这种方法，必须要保证t2先执行，也就是先让t2监控才可以。
  * 
@@ -33,19 +32,22 @@ public class MyContainer2 {
     public int size() {
         return lists.size();
     }
-    
+    /**
+     * 使用wait和notify必须锁定同一个Object，否则将不能使用wait和notify，虽然size=5时线程1发出了notify的命令
+     * 唤醒了t2，但是notify不会释放lock，t2依然需要阻塞，等待t1执行完后释放锁后才可以执行。另外sleep()也是不释放锁的。
+     */
     public static void main(String[] args) {
         MyContainer2 c = new MyContainer2();
         // 锁对象，可以是任意的一个对象，使用wait和notify必须在同一个对象锁上
         final Object lock = new Object();
         
         new Thread(() -> {
+            System.out.println("t2启动");
             synchronized (lock) {
-                System.out.println("t2启动");
                 // 这里判断size是否等于5，如果不满足条件，则t2进入等待状态
                 if (c.size() != 5) {
                     try {
-                        System.out.println("t2 wait...");
+                        System.out.println("size = " + c.size() + ",t2 wait...");
                         // wait会让当前线程进入阻塞状态，并释放锁
                         lock.wait();
                     } catch (Exception e) {
@@ -70,6 +72,7 @@ public class MyContainer2 {
                     System.out.println("add" + i);
                     // t1线程内部发出一个满足条件时的唤醒消息，notify代表唤醒一个线程，这个唤醒是随机的
                     if (c.size() == 5) {
+                        System.out.println("size = 5, 叫醒其他线程！");
                         lock.notify();// notifyAll()可以唤醒全部等待中的线程，随机抢得
                     }
                     try {
