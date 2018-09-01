@@ -45,7 +45,7 @@ public class MyContainer4 {
             System.out.println("t2 启动");
             if (c.size() != 5) {
                 try {
-                    latch.await();
+                    latch.await();// 和o.wait()效果类似
                     // 也可以指定时间
                     // latch.await(5, TimeUnit.SECONDS);
                 } catch (Exception e) {
