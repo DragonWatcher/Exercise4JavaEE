@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class MyContainer1 {
     // 如果不加volatile，lists的变化无法及时被其他线程感知，因此可能导致不可见的问题
-    /*volatile*/ List<Object> lists = new ArrayList<>();
+    volatile List<Object> lists = new ArrayList<>();
     
     public void add(Object o) {
         lists.add(o);
