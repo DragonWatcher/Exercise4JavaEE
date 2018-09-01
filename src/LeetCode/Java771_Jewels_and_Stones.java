@@ -27,6 +27,6 @@ public class Java771_Jewels_and_Stones {
 
     public static void main(String[] args) {
         int numJewelsInStones = numJewelsInStones("aA", "aAAdsjle");
-        System.out.println(numJewelsInStones);
-    }// output:3
+        System.out.println(numJewelsInStones);// output:3
+    }
 }
