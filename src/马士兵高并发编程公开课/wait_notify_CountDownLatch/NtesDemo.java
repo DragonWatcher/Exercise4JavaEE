@@ -17,8 +17,8 @@ public class NtesDemo {
         CountDownLatch latch = new CountDownLatch(2);
         
         new Thread(() -> {
-            System.out.println("监控线程启动：apiResult = " + apiResult);
             if (apiResult == null || mysqlResult == null) {
+                System.out.println("apiResult = " + apiResult + ", mysqlResult = " + mysqlResult);
                 try {
                     latch.await(5, TimeUnit.SECONDS);
                     // 两个结果依然有null值，则提示超时了
@@ -36,11 +36,6 @@ public class NtesDemo {
         new Thread(() -> {
             int count = 0;
             for (int i = 0; i < Integer.MAX_VALUE; i++) {
-                try {
-                    Thread.sleep(50);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
                 count++;
             }
             mysqlResult = count;
@@ -50,17 +45,10 @@ public class NtesDemo {
         new Thread(() -> {
             int count = 0;
             for (int i = 0; i < Integer.MAX_VALUE; i++) {
-                try {
-                    Thread.sleep(50);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
                 count++;
             }
             apiResult = count;
             latch.countDown();
         }).start();
-        
     }
-    
 }
