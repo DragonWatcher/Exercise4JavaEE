@@ -1,6 +1,5 @@
 package Java8_New_Features.日期时间API;
 
-import java.time.Clock;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -43,16 +42,20 @@ public class NewDateTimeAPI {
         LocalDateTime nationalDay = LocalDateTime.of(2018, Month.OCTOBER, 1, 14, 30);
         System.out.println("LocalDateTime.of(2018, Month.OCTOBER, 1, 14, 30) = " + nationalDay);
         System.out.println("-----------①字符串指定-----------");
-        String nationalDayStr = "2018-10-01 14:30:00";
+        String nationalDayStr = "2018-10-01 14:30:30";
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("MMM dd, yyyy - HH:mm");
-        System.out.println("LocalDateTime.parse(2018-10-01 14:30:00) = " + LocalDateTime.parse(nationalDayStr, formatter));
+        String nowStr = now.format(formatter);
+        System.out.println("日期格式化 " + nowStr);
+        System.out.println("LocalDateTime.parse(\"2018-10-01 14:30:30\", formatter) = " + LocalDateTime.parse(nationalDayStr, formatter));
         System.out.println("------------------获取指定时间的相关信息--------------");
         System.out.println("nationalDay.getDayOfWeek() = " + nationalDay.getDayOfWeek() + ";nationalDay.getDayOfWeek().getValue() = " + nationalDay.getDayOfWeek().getValue());
         System.out.println("nationalDay.getLong(ChronoField.MINUTE_OF_HOUR)  = " + nationalDay.getLong(ChronoField.MINUTE_OF_HOUR));
         System.out.println("------------------比较两个时间的相差天数（举一反三:相差分钟，相差小时...）-----------------");
         System.out.println("ChronoUnit.MILLIS.between(now, nationalDay) = " + ChronoUnit.DAYS.between(now, nationalDay));
+        
         System.out.println("-----------比较两个LocalDateTime时间前后-----------");
+        boolean nowIsAfter = LocalDateTime.now().isAfter(nationalDay);
+        System.out.println("****" + nowIsAfter);
         System.out.println("now.isBefore(nationalDay) = " + now.isBefore(nationalDay));
         // 获取当前年
         System.out.println("--------------------Year-----------------");
