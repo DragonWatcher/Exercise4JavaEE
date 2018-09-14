@@ -23,6 +23,11 @@ class A {
     public A() {
         System.out.println("A的构造器");
     }
+    
+    public A(int n) {
+        System.out.println("A的有参构造");
+        this.numA2 = n;
+    }
 }
  
 class B extends A {
@@ -42,12 +47,19 @@ class B extends A {
     public B() {
         System.out.println("B的构造器");
     }
+    
+    public B(int n) {
+        System.out.println("B的有参构造");
+        this.numB2 = n;
+    }
 }
  
-public class Box {
+public class ClassLoad {
     public static void main(String[] args) {
         A ab = new B();
         System.out.println("---");
         ab = new B();
+        System.out.println("---");
+        ab = new B(1);
     }
 }
