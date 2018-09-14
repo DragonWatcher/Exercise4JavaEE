@@ -60,6 +60,6 @@ public class ClassLoad {
         System.out.println("---");
         ab = new B();
         System.out.println("---");
-        ab = new B(1);
+        B anotherB = new B(1);// 思考有参构造的输出结果
     }
 }
