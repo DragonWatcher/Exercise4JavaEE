@@ -29,7 +29,7 @@ public class ReentrantLockDemo {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
-            lock.unlock();
+            lock.unlock();// 比较一下未释放锁前后的执行区别
         }
     }
     
