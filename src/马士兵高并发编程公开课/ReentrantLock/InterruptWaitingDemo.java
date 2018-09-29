@@ -5,18 +5,17 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * 线程打断等待
- * 使用ReentrantLock还可以调用lockInterruptibly方法，可以对线程interrupt方法做出响应。
- * 在一个线程等待锁的过程中，可以被打断。
- * <br>类名：InterruptWaitingDemo<br>
+ * 线程打断等待 使用ReentrantLock还可以调用lockInterruptibly方法，可以对线程interrupt方法做出响应。
+ * 在一个线程等待锁的过程中，可以被打断。 <br>
+ * 类名：InterruptWaitingDemo<br>
  * 作者： mht<br>
  * 日期： 2018年9月15日-下午11:01:49<br>
  */
 public class InterruptWaitingDemo {
-    
+
     public static void main(String[] args) {
         Lock lock = new ReentrantLock();
-        
+
         Thread t1 = new Thread(() -> {
             try {
                 lock.lock();
@@ -28,12 +27,31 @@ public class InterruptWaitingDemo {
             } finally {
                 lock.unlock();
             }
-        });
+        }, "t1");
         t1.start();
-        
-        
+
+        Thread t2 = new Thread(() -> {
+            try {
+                lock.lockInterruptibly();
+                System.out.println("t2 start");
+                TimeUnit.SECONDS.sleep(5);
+                System.out.println("t2 end");
+            } catch (InterruptedException e) {
+                System.out.println("Interrupted!");
+            } finally {
+                System.out.println("lock = " + lock.tryLock());
+                lock.unlock();
+            }
+        }, "t2");
+        t2.start();
+
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        t2.interrupt();// 打断线程 t2 的等待。
     }
-    
-    
 
 }
