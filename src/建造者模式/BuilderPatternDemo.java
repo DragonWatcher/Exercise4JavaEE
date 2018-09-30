@@ -13,16 +13,12 @@ public class BuilderPatternDemo {
     public static void main(String[] args) {
         MealBuilder mealBuilder = new MealBuilder();
         
-        Item vegBurger = new VegBurger();
-        Item coke = new Coke();
-        Meal vegMeal = mealBuilder.prepareMeal(vegBurger, coke);
+        Meal vegMeal = mealBuilder.prepareMeal(new VegBurger(), new Coke());
         System.out.println("Veg Meal");
         vegMeal.showItems();
         System.out.println("Total Cost: " + vegMeal.getSum());
 
-        Item chickenBurger = new ChickenBurger();
-        Item pepsi = new Pepsi();
-        Meal nonVegMeal = mealBuilder.prepareMeal(chickenBurger, pepsi);
+        Meal nonVegMeal = mealBuilder.prepareMeal(new ChickenBurger(), new Pepsi());
         System.out.println("\n\nNon-Veg Meal");
         nonVegMeal.showItems();
         System.out.println("Total Cost: " + nonVegMeal.getSum());
