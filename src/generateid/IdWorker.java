@@ -1,7 +1,5 @@
 package generateid;
 
-import java.text.SimpleDateFormat;
-
 public class IdWorker {
     private final long workerId;
     private final static long twepoch = 1361753741828L;

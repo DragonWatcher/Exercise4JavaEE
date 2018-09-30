@@ -1,12 +1,5 @@
 package JavaIO1;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Timer;
-import java.util.TimerTask;
-
 public class daojishi {
 
     public static void main(String[] args) {

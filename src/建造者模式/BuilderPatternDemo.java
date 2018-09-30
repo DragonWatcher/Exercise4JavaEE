@@ -1,6 +1,5 @@
 package 建造者模式;
 
-import 建造者模式.item.Item;
 import 建造者模式.item.burger.ChickenBurger;
 import 建造者模式.item.burger.VegBurger;
 import 建造者模式.item.colddrink.Coke;

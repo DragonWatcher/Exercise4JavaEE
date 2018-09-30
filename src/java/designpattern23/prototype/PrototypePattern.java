@@ -1,7 +1,5 @@
 package java.designpattern23.prototype;
 
-import java.util.Date;
-
 public class PrototypePattern{
 	public static void main(String[] args) {
 		ConcretePrototype c = new ConcretePrototype();
