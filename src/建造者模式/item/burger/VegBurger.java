@@ -1,4 +1,4 @@
-package 建造者模式.item;
+package 建造者模式.item.burger;
 
 public class VegBurger extends Burger {
 

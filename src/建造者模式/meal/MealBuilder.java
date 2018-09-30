@@ -1,9 +1,9 @@
 package 建造者模式.meal;
 
-import 建造者模式.item.ChickenBurger;
-import 建造者模式.item.Coke;
-import 建造者模式.item.Pepsi;
-import 建造者模式.item.VegBurger;
+import 建造者模式.item.burger.ChickenBurger;
+import 建造者模式.item.burger.VegBurger;
+import 建造者模式.item.colddrink.Coke;
+import 建造者模式.item.colddrink.Pepsi;
 
 public class MealBuilder {
 

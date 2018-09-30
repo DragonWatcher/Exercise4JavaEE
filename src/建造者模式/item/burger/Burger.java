@@ -1,5 +1,6 @@
-package 建造者模式.item;
+package 建造者模式.item.burger;
 
+import 建造者模式.item.Item;
 import 建造者模式.packing.Packing;
 import 建造者模式.packing.Wrapper;
 

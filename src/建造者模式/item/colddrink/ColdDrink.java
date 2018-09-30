@@ -1,5 +1,6 @@
-package 建造者模式.item;
+package 建造者模式.item.colddrink;
 
+import 建造者模式.item.Item;
 import 建造者模式.packing.Bottle;
 import 建造者模式.packing.Packing;
 
