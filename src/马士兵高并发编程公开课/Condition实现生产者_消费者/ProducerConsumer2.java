@@ -5,7 +5,15 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-
+/**
+ * 面试题：写一个固定容量同步容器，拥有put和get方法，以及getCount方法 <br>
+ * 能够支持2个生产线程以及10个消费者线程的阻塞调用。
+ * 
+ * https://blog.csdn.net/u014745069/article/details/82927630
+ * <br>类名：ProducerConsumer2<br>
+ * 作者： mht<br>
+ * 日期： 2018年10月5日-下午8:19:11<br>
+ */
 public class ProducerConsumer2<T> {
     final private LinkedList<T> lists = new LinkedList<>();
     final private int MAX = 10;
