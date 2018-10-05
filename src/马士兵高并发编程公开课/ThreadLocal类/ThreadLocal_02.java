@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  * 日期： 2018年10月5日-下午8:28:26<br>
  */
 public class ThreadLocal_02 {
-    volatile static Person p = new Person();
+    /*volatile static Person p = new Person();*/
     static ThreadLocal<Person> tl = new ThreadLocal<>();
 
     public static void main(String[] args) {
