@@ -1,4 +1,4 @@
-package enums;
+package 枚举;
 
 public enum ScalEnum {
     AIR_ON(405),

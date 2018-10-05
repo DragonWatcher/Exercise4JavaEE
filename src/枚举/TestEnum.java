@@ -1,4 +1,4 @@
-package enums;
+package 枚举;
 
 import java.util.EnumMap;
 
