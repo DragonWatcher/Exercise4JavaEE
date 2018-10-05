@@ -7,6 +7,13 @@ import 建造者模式.item.colddrink.Pepsi;
 import 建造者模式.meal.Meal;
 import 建造者模式.meal.MealBuilder;
 
+/**
+ * 建造者模式<br>
+ * 博客地址：https://blog.csdn.net/u014745069/article/details/82909779
+ * <br>类名：BuilderPatternDemo<br>
+ * 作者： mht<br>
+ * 日期： 2018年10月5日-下午12:09:37<br>
+ */
 public class BuilderPatternDemo {
 
     public static void main(String[] args) {
