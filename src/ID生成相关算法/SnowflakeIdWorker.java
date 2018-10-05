@@ -1,4 +1,4 @@
-package generateid;
+package ID生成相关算法;
 
 /**
  * Twitter_Snowflake<br>

@@ -1,4 +1,4 @@
-package generateid;
+package ID生成相关算法;
 
 public class IdWorker {
     private final long workerId;

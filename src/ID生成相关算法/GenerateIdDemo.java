@@ -1,4 +1,4 @@
-package generateid;
+package ID生成相关算法;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
