@@ -1,10 +1,10 @@
 package 观察者模式.实体观察者;
 
-import 观察者模式.Subject;
+import 观察者模式.Converter;
 
-public class BinaryObserver extends Observer {
+public class BinaryConverter extends BaseConverter {
 
-	public BinaryObserver(Subject subject) {
+	public BinaryConverter(Converter subject) {
 		this.subject = subject;
 		this.subject.attach(this);
 	}

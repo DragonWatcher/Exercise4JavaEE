@@ -1,8 +1,8 @@
 package 观察者模式;
 
-import 观察者模式.实体观察者.BinaryObserver;
-import 观察者模式.实体观察者.HexObserver;
-import 观察者模式.实体观察者.OctalObserver;
+import 观察者模式.实体观察者.BinaryConverter;
+import 观察者模式.实体观察者.HexConverter;
+import 观察者模式.实体观察者.OctalConverter;
 
 /**
  * 观察者模式<br>
@@ -14,11 +14,11 @@ import 观察者模式.实体观察者.OctalObserver;
 public class ObserverPatternProgram {
 
 	public static void main(String[] args) {
-		Subject subject = new Subject();
+		Converter subject = new Converter();
 
-		new HexObserver(subject);
-		new OctalObserver(subject);
-		new BinaryObserver(subject);
+		new HexConverter(subject);
+		new OctalConverter(subject);
+		new BinaryConverter(subject);
 
 		System.out.println("First state change : 15");
 		subject.setState(15);

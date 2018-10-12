@@ -1,10 +1,10 @@
 package 观察者模式.实体观察者;
 
-import 观察者模式.Subject;
+import 观察者模式.Converter;
 
-public class HexObserver extends Observer {
+public class HexConverter extends BaseConverter {
 
-	public HexObserver(Subject subject) {
+	public HexConverter(Converter subject) {
 		this.subject = subject;
 		this.subject.attach(this);
 	}

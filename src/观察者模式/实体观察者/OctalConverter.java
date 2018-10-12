@@ -1,10 +1,10 @@
 package 观察者模式.实体观察者;
 
-import 观察者模式.Subject;
+import 观察者模式.Converter;
 
-public class OctalObserver extends Observer {
+public class OctalConverter extends BaseConverter {
 
-	public OctalObserver(Subject subject) {
+	public OctalConverter(Converter subject) {
 		this.subject = subject;
 		this.subject.attach(this);
 	}
