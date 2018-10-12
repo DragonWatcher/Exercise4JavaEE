@@ -20,10 +20,9 @@ public class ObserverPatternProgram {
 		new OctalConverter(cvter);
 		new BinaryConverter(cvter);
 
-		System.out.println("First state change : 15");
+		System.out.println("第一个需要转化的十进制数是 : 15");
 		cvter.setState(15);
-		System.out.println("\nSecond state change : 10");
+		System.out.println("\n第二个需要转化的十进制数是 : 10");
 		cvter.setState(10);
 	}
-
 }

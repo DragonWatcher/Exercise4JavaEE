@@ -6,9 +6,9 @@ import java.util.List;
 import 观察者模式.实体观察者.BaseConverter;
 
 public class Converter {
-	/** Subject 依赖于一个Observer对象组成的List */
+	/** Converter 依赖于一个BaseConverter对象组成的List */
 	private List<BaseConverter> baseConverters = new ArrayList<>();
-	/** int类型的状态变量 */
+	/** 待转换的十进制数 */
 	private int state;
 
 	public void attach(BaseConverter observer) {

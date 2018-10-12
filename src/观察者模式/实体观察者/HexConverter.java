@@ -13,5 +13,4 @@ public class HexConverter extends BaseConverter {
 	public void update() {
 		System.out.println("Hex String : " + Integer.toHexString(converter.getState()).toUpperCase());
 	}
-
 }

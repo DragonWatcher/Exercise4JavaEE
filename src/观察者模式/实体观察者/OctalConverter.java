@@ -13,5 +13,4 @@ public class OctalConverter extends BaseConverter {
 	public void update() {
 		System.out.println("Octal String : " + Integer.toOctalString(converter.getState()));
 	}
-
 }
