@@ -3,6 +3,8 @@ package 观察者模式;
 import java.util.ArrayList;
 import java.util.List;
 
+import 观察者模式.实体观察者.Observer;
+
 public class Subject {
 
 	private List<Observer> observers = new ArrayList<>();

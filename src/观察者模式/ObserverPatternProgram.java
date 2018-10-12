@@ -1,5 +1,9 @@
 package 观察者模式;
 
+import 观察者模式.实体观察者.BinaryObserver;
+import 观察者模式.实体观察者.HexObserver;
+import 观察者模式.实体观察者.OctalObserver;
+
 /**
  * 观察者模式<br>
  * 当对象间存在一对多关系时，可以使用观察者模式。比如，当一个对象被修改时，则会自动通知它的依赖对象。 观察者属于行为型模式 <br>
