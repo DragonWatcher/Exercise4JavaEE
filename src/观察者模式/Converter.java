@@ -16,7 +16,7 @@ public class Converter {
 	}
 
 	/**
-	 *  通知所有的观察者更新
+	 * 通知所有的观察者更新
 	 */
 	public void notifyAllConverters() {
 		for (BaseConverter cvter : baseConverters)
