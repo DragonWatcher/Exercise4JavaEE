@@ -14,16 +14,16 @@ import 观察者模式.实体观察者.OctalConverter;
 public class ObserverPatternProgram {
 
 	public static void main(String[] args) {
-		Converter subject = new Converter();
+		Converter cvter = new Converter();
 
-		new HexConverter(subject);
-		new OctalConverter(subject);
-		new BinaryConverter(subject);
+		new HexConverter(cvter);
+		new OctalConverter(cvter);
+		new BinaryConverter(cvter);
 
 		System.out.println("First state change : 15");
-		subject.setState(15);
+		cvter.setState(15);
 		System.out.println("\nSecond state change : 10");
-		subject.setState(10);
+		cvter.setState(10);
 	}
 
 }

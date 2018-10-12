@@ -4,14 +4,14 @@ import 观察者模式.Converter;
 
 public class OctalConverter extends BaseConverter {
 
-	public OctalConverter(Converter subject) {
-		this.subject = subject;
-		this.subject.attach(this);
+	public OctalConverter(Converter converter) {
+		this.converter = converter;
+		this.converter.attach(this);
 	}
 
 	@Override
 	public void update() {
-		System.out.println("Octal String : " + Integer.toOctalString(subject.getState()));
+		System.out.println("Octal String : " + Integer.toOctalString(converter.getState()));
 	}
 
 }

@@ -4,7 +4,7 @@ import 观察者模式.Converter;
 
 public abstract class BaseConverter {
 
-	protected Converter subject;
+	protected Converter converter;
 
 	public abstract void update();
 }
