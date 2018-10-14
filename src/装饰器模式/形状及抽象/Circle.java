@@ -1,6 +1,4 @@
-package 装饰器模式.具体形状;
-
-import 装饰器模式.Shape;
+package 装饰器模式.形状及抽象;
 
 public class Circle implements Shape{
 	@Override
