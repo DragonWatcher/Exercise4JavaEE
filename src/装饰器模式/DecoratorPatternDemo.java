@@ -14,13 +14,13 @@ public class DecoratorPatternDemo {
 
 		Shape redRectangle = new RedShapeDecorator(new Rectangle());
 
-		System.out.println("Circle with normal border");
+		System.out.println("Circle with normal border : ");
 		circle.draw();
 
-		System.out.println("\nCircle of red border");
+		System.out.println("\nCircle with red border : ");
 		redCircle.draw();
 
-		System.out.println("\nRectangle of red border");
+		System.out.println("\nRectangle with red border : ");
 		redRectangle.draw();
 	}
 }
