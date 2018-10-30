@@ -11,10 +11,16 @@ public class 十六进制练习 {
 
 	public static void main(String[] args) throws InterruptedException {
 		Random rdm = new Random();
+		int count = 0;
 		for (;;) {
 			int out = rdm.nextInt(16);
 			TimeUnit.SECONDS.sleep(2);
-			System.out.println(Integer.toHexString(out).toUpperCase());
+			if (count == 10) {
+				System.out.println();
+				count = 0;
+			}
+			System.out.print(Integer.toHexString(out).toUpperCase() + "    ");
+			count++;
 		}
 	}
 
