@@ -2,7 +2,11 @@ package 进制转换练习;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-
+/**
+ * 死循环输出0-15之间任意的数字，然后显示二进制，在脑海中回想对应的16或10进制。
+ * @author mht
+ * @date 2018年10月30日上午10:28:25
+ */
 public class 二进制练习 {
 
 	public static void main(String[] args) throws InterruptedException {
