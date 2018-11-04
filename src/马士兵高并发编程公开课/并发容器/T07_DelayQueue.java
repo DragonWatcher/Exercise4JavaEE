@@ -3,7 +3,11 @@ package 马士兵高并发编程公开课.并发容器;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
-
+/**
+ * DelayQueue
+ * @author mht
+ * @date 2018年11月4日上午9:17:39
+ */
 public class T07_DelayQueue {
     
     static BlockingQueue<MyTask> tasks = new java.util.concurrent.DelayQueue<>(); 
