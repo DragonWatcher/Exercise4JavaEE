@@ -8,7 +8,6 @@ import java.util.Vector;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class T02_CopyOnWriteList {
-
     public static void main(String[] args) {
         // List<String> lists = new ArrayList<>();// 会产生并发问题
         // List<String> lists = new Vector<>();
@@ -29,7 +28,6 @@ public class T02_CopyOnWriteList {
         }
 
         runAndComputeTime(ths);
-
         System.out.println(lists.size());
     }
 

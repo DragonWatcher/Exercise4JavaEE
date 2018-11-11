@@ -27,7 +27,9 @@ public class T05_LinkedBlockingQueue {
             new Thread(() -> {
                 for (;;) {
                     try {
-                        System.out.println(Thread.currentThread().getName() + " take " + strs.take());// 如果空了，就会等待
+                        System.out.println(Thread.currentThread()
+                                                 .getName()
+                                + " take " + strs.take());// 如果空了，就会等待
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

@@ -27,15 +27,15 @@ public class T04_ConcurrentQueue {
         System.out.println("output#5 : " + strs.peek()); // 取出，容器中的不删
 
         System.out.println("output#6 : " + strs.size());
-        
+
         System.out.println("output#7 : " + names);
-        
+
         System.out.println("output#8 : " + names.pollLast()); // LIFO
-        
+
         System.out.println("output#9 : " + names);
-        
+
         System.out.println("output#10 : " + names.peekFirst()); // FIFO
-        
+
         System.out.println("output#11 : " + names);
     }
 }
