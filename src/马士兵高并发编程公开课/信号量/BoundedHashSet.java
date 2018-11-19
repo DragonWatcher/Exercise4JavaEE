@@ -38,12 +38,12 @@ public class BoundedHashSet<T> {
             sem.release();
         return wasRemoved;
     }
-    
+    /** 只是为了方便打印的 */
     public void print() {
         System.out.print(Thread.currentThread().getName() + " : ");
         this.set.forEach(o -> System.out.print(o + " "));
     }
-
+    /** 用于测试的主方法 */
     public static void main(String[] args) {
         BoundedHashSet<String> names = new BoundedHashSet<>(5);
 
