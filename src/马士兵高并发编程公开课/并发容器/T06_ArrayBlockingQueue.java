@@ -16,10 +16,10 @@ public class T06_ArrayBlockingQueue {
             strs.put("a" + i);
         }
 
-        // strs.put("aaa");
-        // strs.add("aaa");
-        strs.offer("aaa");
-        // strs.offer("aaa", 1, TimeUnit.SECONDS);
+//         strs.put("aaa");// 线程阻塞，知道有空闲位置
+//         strs.add("aaa"); // output:java.lang.IllegalStateException: Queue full
+//        strs.offer("aaa"); // output:[a0, a1, a2, a3, a4, a5, a6, a7, a8, a9]
+         strs.offer("aaa", 3, TimeUnit.SECONDS);// 阻塞，但可以指定超时时间
 
         System.out.println(strs);
     }
