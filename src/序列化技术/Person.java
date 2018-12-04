@@ -1,10 +1,12 @@
 package 序列化技术;
 
-public class Person implements java.io.Serializable {
+import java.io.Serializable;
+
+public class Person implements Serializable {
 
     private static final long serialVersionUID = -7178619182797665493L;
 
-    private String firstName;
+	private String firstName;
 
     private String lastName;
 
@@ -73,5 +75,5 @@ public class Person implements java.io.Serializable {
         return "{firstName : " + firstName + ", lastName : " + lastName + ", age : " + age + ", spouse : " + spouse.getFirstName()
                 + ", gender : " + gender + "}";
     }
-
+    
 }
